@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -5738436328037799890
     second: PlayerStudent_3
+  - first:
+      213: 7533111924125195585
+    second: PlayerStudent_4
+  - first:
+      213: 6902882291949912963
+    second: PlayerStudent_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,10 +38,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -44,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,6 +82,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -111,6 +120,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -119,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 40
+        y: 72
         width: 19
         height: 18
       alignment: 0
@@ -140,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 37
-        y: 40
+        y: 72
         width: 19
         height: 18
       alignment: 0
@@ -161,7 +182,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 40
+        y: 72
         width: 19
         height: 18
       alignment: 0
@@ -182,7 +203,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 8
+        y: 40
         width: 19
         height: 18
       alignment: 0
@@ -198,6 +219,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PlayerStudent_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 40
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dddb2026dfa8860800000000000000
+      internalID: 7533111924125195585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerStudent_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 40
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383420a1fd6fbcf50800000000000000
+      internalID: 6902882291949912963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -208,9 +271,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      PlayerStudent_5: 6902882291949912963
+      PlayerStudent_3: -5738436328037799890
+      PlayerStudent_4: 7533111924125195585
+      PlayerStudent_1: -5015167957970732025
+      PlayerStudent_2: -4993292420401643302
+      PlayerStudent_0: 7765369945357807157
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
