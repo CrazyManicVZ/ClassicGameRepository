@@ -109,8 +109,8 @@ TextureImporter:
       name: Pizza_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 13
+        x: 9
+        y: 43
         width: 13
         height: 8
       alignment: 0
@@ -120,8 +120,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f46dd887a20b2c4d891643ab00a4a5f
-      internalID: -1804303895
+      spriteID: 9daad33a195c9e346990f71eb1a52c38
+      internalID: 83243889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pizza_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 10
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7509c7553e540a544a433d0d116f0f3e
+      internalID: 210137421
       vertices: []
       indices: 
       edges: []
@@ -137,7 +158,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pizza_0: -1804303895
+      Pizza_0: 83243889
+      Pizza_1: 210137421
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
