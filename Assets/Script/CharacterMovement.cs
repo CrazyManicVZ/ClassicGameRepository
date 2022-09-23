@@ -13,7 +13,10 @@ public class CharacterMovement : MonoBehaviour
     public bool movingUp = false;
     public bool movingDown = false;
     public bool movingLeft = false;
-    public bool movingRight = false; 
+    public bool movingRight = false;
+    public float timeScale = 1.0f;
+    private int lastTime = 0;
+    private float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +33,14 @@ public class CharacterMovement : MonoBehaviour
 
     void Tweening()
     {
+        //I made it slow so you got time to see the animation
         if (Player.transform.position == new Vector3(-13.5f, 3.50f, 0.0f))
         {
-            Tweenmovement(new Vector3(-13.5f, 7.50f, 0.0f), 6.0f);
             movingUp = true;
             movingDown = false;
             movingRight = false;
-            movingLeft = false; 
+            movingLeft = false;
+            Tweenmovement(new Vector3(-13.5f, 7.50f, 0.0f), 5.0f);
         }
 
         if (Player.transform.position == new Vector3(-13.5f, 7.50f, 0.0f))
@@ -45,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
             movingDown = false;
             movingRight = true;
             movingLeft = false;
-            Tweenmovement(new Vector3(-8.5f, 7.50f, 0.0f), 6.0f);
+            Tweenmovement(new Vector3(-8.5f, 7.50f, 0.0f), 5.0f);
         }
 
         if (Player.transform.position == new Vector3(-8.5f, 7.50f, 0.0f))
@@ -54,7 +58,7 @@ public class CharacterMovement : MonoBehaviour
             movingDown = true;
             movingRight = false;
             movingLeft = false;
-            Tweenmovement(new Vector3(-8.5f, 3.50f, 0.0f), 6.0f);
+            Tweenmovement(new Vector3(-8.5f, 3.50f, 0.0f), 5.0f);
         }
 
         if (Player.transform.position == new Vector3(-8.5f, 3.50f, 0.0f))
@@ -63,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
             movingDown = false;
             movingRight = false;
             movingLeft = true;
-            Tweenmovement(new Vector3(-13.5f, 3.50f, 0.0f), 6.0f);
+            Tweenmovement(new Vector3(-13.5f, 3.50f, 0.0f), 5.0f);
         }
 
     }
@@ -72,8 +76,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (movingUp == true || movingDown == true || movingLeft == true || movingRight == true)
         {
-            backgroundSource.volume = 0.5f;
-            walkingSource.PlayDelayed(0.5f);
+            if (timer > lastTime + 1)
+            {
+                backgroundSource.volume = 0.5f;
+                walkingSource.Play();
+                lastTime++;
+            }
         }
         else
         {
@@ -120,6 +128,8 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        Time.timeScale = timeScale;
+        timer += Time.deltaTime;
         Tweening();
         soundEffects();
         playAnimation();
