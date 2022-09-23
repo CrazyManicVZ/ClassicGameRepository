@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: MapSprite_2
+  m_Name: MapSprite _3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1535047469, guid: 467164a50193c6b43b139535df0f7e80, type: 3}
+  m_Sprite: {fileID: -895403674, guid: a538880e04978f04c821abe5c5be1953, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

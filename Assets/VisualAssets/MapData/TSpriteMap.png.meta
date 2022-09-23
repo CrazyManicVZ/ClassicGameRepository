@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 467164a50193c6b43b139535df0f7e80
+guid: 592e3dc14c63abd4b96d8a5bfcef25cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 7
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MapSprite_0
+      name: TSpriteMap_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 20
-        width: 7
-        height: 7
+        x: 2
+        y: 19
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,71 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34fd69a9606ff20448250be3ca82d9ff
-      internalID: 1111403641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSprite_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 12
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9696ff50784bc114facb0164deefbb82
-      internalID: -233333076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSprite_2
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 20
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7aa40284a7862f1469fc1e03278c4481
-      internalID: 1535047469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSprite_3
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 12
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e247db40787592d44bb7f8c5b4267039
-      internalID: -696772770
+      spriteID: 85a99038c0364ec478962110184717ff
+      internalID: 932160006
       vertices: []
       indices: 
       edges: []
@@ -200,10 +137,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MapSprite_0: 1111403641
-      MapSprite_1: -233333076
-      MapSprite_2: 1535047469
-      MapSprite_3: -696772770
+      TSpriteMap_0: 932160006
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
