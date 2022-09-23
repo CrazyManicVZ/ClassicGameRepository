@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55cdd8bc6d718cd4eb38ab170817f1fa
+guid: 592e3dc14c63abd4b96d8a5bfcef25cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DoubleLine2_0
+      name: TSpriteMap_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 15
-        width: 5
-        height: 6
+        x: 2
+        y: 19
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc19db19447f5f2458546235d1e49528
-      internalID: 258772251
+      spriteID: 85a99038c0364ec478962110184717ff
+      internalID: 932160006
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DoubleLine2_0: 258772251
+      TSpriteMap_0: 932160006
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
