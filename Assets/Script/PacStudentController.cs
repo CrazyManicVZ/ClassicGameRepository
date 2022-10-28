@@ -15,6 +15,8 @@ public class PacStudentController : MonoBehaviour
 
     public Vector3 startPosition;
 
+    public Vector3 originalposition;
+
     public ParticleSystem walkDust;
 
     public bool movingUp = false;
@@ -28,7 +30,6 @@ public class PacStudentController : MonoBehaviour
     public float timeScale = 1.0f;
     private int lastTime = 0;
     private float timer = 0;
-    private float fixedtimer = 0;
 
     [SerializeField]
     private GameObject Player;
@@ -43,7 +44,7 @@ public class PacStudentController : MonoBehaviour
     {
         tweener = GetComponent<Tweener>();
         startPosition = Player.transform.position;
-
+       
     }
 
     public void Tweenmovement(Vector3 position, float duration)
@@ -57,6 +58,7 @@ public class PacStudentController : MonoBehaviour
         //I made it slow so you got time to see the animation
         if (Input.GetKeyDown(KeyCode.W))
         {
+            blocked = false;
             spawnDust();
             setInput(new Vector3(0, 1, 0));
             if (lastInputtedDirection == new Vector3(0, 1, 0))
@@ -70,6 +72,7 @@ public class PacStudentController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
+            blocked = false;
             spawnDust();
             setInput(new Vector3(-1, 0, 0));
             if (lastInputtedDirection == new Vector3(-1, 0, 0))
@@ -83,6 +86,7 @@ public class PacStudentController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
+            blocked = false;
             spawnDust();
             setInput(new Vector3(0, -1, 0));
             if (lastInputtedDirection == new Vector3(0, -1, 0))
@@ -96,6 +100,7 @@ public class PacStudentController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
+            blocked = false;
             spawnDust();
             setInput(new Vector3(1, 0, 0));
             if (lastInputtedDirection == new Vector3(1, 0, 0))
@@ -133,7 +138,18 @@ public class PacStudentController : MonoBehaviour
         return Block.collider != null;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        lastInputtedDirection = -lastInputtedDirection;
+        StartCoroutine(Delaytime(1f));
+        blocked = true;
+    }
 
+
+    IEnumerator Delaytime (float time)
+        {
+            yield return new WaitForSeconds(time);
+        }
 
     void soundEffects()
     {
@@ -222,12 +238,7 @@ public class PacStudentController : MonoBehaviour
         if (blocked == false)
         {
             Vector3 playerTranslation = lastInputtedDirection * Time.fixedDeltaTime;
-            fixedtimer += Time.fixedDeltaTime;
-
-            if (fixedtimer > 0.5)
-            {
-                Tweenmovement((Player.transform.position + playerTranslation), playerSpeed);
-            }
+            Tweenmovement((Player.transform.position + playerTranslation), playerSpeed);
         }
     }
 
