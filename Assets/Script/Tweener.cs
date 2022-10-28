@@ -6,7 +6,7 @@ public class Tweener : MonoBehaviour
 {
     private List<Tween> activeTweens;
     //I just like having this here 
-    private float speed = 1.0f;
+    private float speed = 6.0f;
 
     // Start is called before the first frame update
     void Start()
