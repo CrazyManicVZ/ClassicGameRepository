@@ -18,6 +18,7 @@ public class PacStudentController : MonoBehaviour
     public Vector3 originalposition;
 
     public ParticleSystem walkDust;
+    public ParticleSystem crash;
 
     public bool movingUp = false;
     public bool movingDown = false;
@@ -61,13 +62,10 @@ public class PacStudentController : MonoBehaviour
             blocked = false;
             spawnDust();
             setInput(new Vector3(0, 1, 0));
-            if (lastInputtedDirection == new Vector3(0, 1, 0))
-            {
-                movingUp = true;
-                movingDown = false;
-                movingRight = false;
-                movingLeft = false;
-            }
+            movingUp = true;
+            movingDown = false;
+            movingRight = false;
+            movingLeft = false;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -75,13 +73,10 @@ public class PacStudentController : MonoBehaviour
             blocked = false;
             spawnDust();
             setInput(new Vector3(-1, 0, 0));
-            if (lastInputtedDirection == new Vector3(-1, 0, 0))
-            {
-                movingUp = false;
-                movingDown = false;
-                movingRight = false;
-                movingLeft = true;
-            }
+            movingUp = false;
+            movingDown = false;
+            movingRight = false;
+            movingLeft = true;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -89,13 +84,10 @@ public class PacStudentController : MonoBehaviour
             blocked = false;
             spawnDust();
             setInput(new Vector3(0, -1, 0));
-            if (lastInputtedDirection == new Vector3(0, -1, 0))
-            {
-                movingUp = false;
-                movingDown = true;
-                movingRight = false;
-                movingLeft = false;
-            }
+            movingUp = false;
+            movingDown = true;
+            movingRight = false;
+            movingLeft = false;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
@@ -103,13 +95,11 @@ public class PacStudentController : MonoBehaviour
             blocked = false;
             spawnDust();
             setInput(new Vector3(1, 0, 0));
-            if (lastInputtedDirection == new Vector3(1, 0, 0))
-            {
-                movingUp = false;
-                movingDown = false;
-                movingRight = true;
-                movingLeft = false;
-            }
+            movingUp = false;
+            movingDown = false;
+            movingRight = true;
+            movingLeft = false;
+
         }
     }
 
@@ -131,6 +121,11 @@ public class PacStudentController : MonoBehaviour
         walkDust.Play();
     }
 
+    void spawnCrash()
+    {
+        crash.Play();
+    }
+
     public bool Blocked (Vector3 direction)
     {
         RaycastHit2D Block = Physics2D.BoxCast(Player.transform.position, new Vector3(1, 1, 1) * 0.75f, 0.0f, direction, 2.0f, wallCollusion);
@@ -140,6 +135,7 @@ public class PacStudentController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        spawnCrash();
         lastInputtedDirection = -lastInputtedDirection;
         StartCoroutine(Delaytime(1f));
         blocked = true;
@@ -178,10 +174,26 @@ public class PacStudentController : MonoBehaviour
         }
     }
 
+    void Teleport()
+    {
+        if (Player.transform.position.x <= -14.5f)
+        {
+            blocked = true;
+            Player.transform.position = new Vector3(13.0f, Player.transform.position.y, Player.transform.position.z);
+            blocked = false;
+        }
+
+        if (Player.transform.position.x >= 13.5f)
+        {
+            blocked = true;
+            Player.transform.position = new Vector3(-12.5f, Player.transform.position.y, Player.transform.position.z);
+            blocked = false;
+        }
+    }
 
     void playAnimation()
     {
-        if (movingUp == true)
+        if (movingUp == true && lastInputtedDirection == new Vector3(0, 1, 0))
         {
             playerAnimator.SetBool("movingUp", true);
             playerAnimator.SetBool("movingDown", false);
@@ -190,7 +202,7 @@ public class PacStudentController : MonoBehaviour
 
         }
 
-        if (movingDown == true)
+        if (movingDown == true && lastInputtedDirection == new Vector3(0, -1, 0))
         {
             playerAnimator.SetBool("movingUp", false);
             playerAnimator.SetBool("movingDown", true);
@@ -198,7 +210,7 @@ public class PacStudentController : MonoBehaviour
             playerAnimator.SetBool("movingLeft", false);
         }
 
-        if (movingLeft == true)
+        if (movingLeft == true && lastInputtedDirection == new Vector3(-1, 0, 0))
         {
             playerAnimator.SetBool("movingUp", false);
             playerAnimator.SetBool("movingDown", false);
@@ -206,7 +218,7 @@ public class PacStudentController : MonoBehaviour
             playerAnimator.SetBool("movingLeft", true);
         }
 
-        if (movingRight == true)
+        if (movingRight == true && lastInputtedDirection == new Vector3(1, 0, 0))
         {
             playerAnimator.SetBool("movingUp", false);
             playerAnimator.SetBool("movingDown", false);
@@ -235,6 +247,7 @@ public class PacStudentController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Teleport();
         if (blocked == false)
         {
             Vector3 playerTranslation = lastInputtedDirection * Time.fixedDeltaTime;
